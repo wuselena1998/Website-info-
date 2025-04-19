@@ -1,104 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radiation Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-sA+e2I7n7MDrSfmvx6jhM/8g0uFvIoei3DILp/YZzCk="
+      crossorigin=""
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>☢️ Radiation Tracker</h1>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Radiation Tracker</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-sA+e2I7n7MDrSfmvx6jhM/8g0uFvIoei3DILp/YZzCk=" crossorigin="" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f0f0;
-      padding: 20px;
-      text-align: center;
-    }
+      <label for="location">Select Location:</label>
+      <select id="location">
+        <option value="nyc">New York City</option>
+        <option value="tokyo">Tokyo</option>
+        <option value="chernobyl">Chernobyl</option>
+      </select>
 
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+      <div id="dataDisplay" class="data-box">
+        <h2>Current Radiation Level:</h2>
+        <p id="current">-- μSv/h</p>
 
-    h1 {
-      color: #cc0000;
-    }
-
-    .data-box {
-      margin-top: 20px;
-    }
-
-    #map {
-      height: 400px;
-      width: 100%;
-      margin-top: 20px;
-      border: 2px solid #ddd;
-      border-radius: 10px;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <h1>☒️ Radiation Tracker</h1>
-
-    <label for="location">Select Location:</label>
-    <select id="location">
-      <option value="nyc">New York City</option>
-      <option value="tokyo">Tokyo</option>
-      <option value="chernobyl">Chernobyl</option>
-    </select>
-
-    <div id="dataDisplay" class="data-box">
-      <h2>Current Radiation Level:</h2>
-      <p id="current">-- μSv/h</p>
-
-      <h3>Historical Data (past 5 days):</h3>
-      <ul id="history"></ul>
+        <h3>Historical Data (past 5 days):</h3>
+        <ul id="history"></ul>
+      </div>
     </div>
 
-    <div id="map"></div>
-  </div>
+    <div id="map" class="map-box"></div>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-pMprtkFS86AU5TzNKj1qS+c8lfIrYk91Gz3GmxP7rNA=" crossorigin=""></script>
-  <script>
-    const radiationData = {
-      nyc: { lat: 40.7128, lon: -74.0060, current: 0.12, history: [0.11, 0.10, 0.12, 0.13, 0.12] },
-      tokyo: { lat: 35.6895, lon: 139.6917, current: 0.09, history: [0.10, 0.09, 0.08, 0.09, 0.10] },
-      chernobyl: { lat: 51.2766, lon: 30.2219, current: 2.75, history: [2.70, 2.72, 2.74, 2.76, 2.75] },
-    };
-
-    const locationSelect = document.getElementById("location");
-    const currentEl = document.getElementById("current");
-    const historyEl = document.getElementById("history");
-
-    let map = L.map("map").setView([40.7128, -74.0060], 10);
-
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    let marker = L.marker([40.7128, -74.0060]).addTo(map);
-
-    function updateData() {
-      const loc = locationSelect.value;
-      const data = radiationData[loc];
-
-      currentEl.textContent = `${data.current} μSv/h`;
-      historyEl.innerHTML = data.history.map(val => `<li>${val} μSv/h</li>`).join("");
-
-      marker.setLatLng([data.lat, data.lon]);
-      map.setView([data.lat, data.lon], 10);
-    }
-
-    locationSelect.addEventListener("change", updateData);
-    updateData();
-  </script>
-</body>
-
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-pMprtkFS86AU5TzNKj1qS+c8lfIrYk91Gz3GmxP7rNA="
+      crossorigin=""
+    ></script>
+    <script src="script.js"></script>
+  </body>
 </html>
