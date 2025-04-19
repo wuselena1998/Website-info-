@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Radiation Tracker</title>
-
-  <!-- CSS files -->
   <link rel="stylesheet" href="style.css" />
   <link
     rel="stylesheet"
@@ -13,10 +11,38 @@
     integrity="sha256-sA+e2I7n7MDrSfmvx6jhM/8g0uFvIoei3DILp/YZzCk="
     crossorigin=""
   />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .data-box {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .map-box {
+      height: 300px;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>☢️ Radiation Tracker</h1>
+    <h1>☒️ Radiation Tracker</h1>
 
     <label for="location">Select Location:</label>
     <select id="location">
@@ -32,3 +58,52 @@
       <h3>Historical Data (past 5 days):</h3>
       <ul id="history"></ul>
     </div>
+
+    <div id="map" class="map-box"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-pMprtkFS86AU5TzNKj1qS+c8lfIrYk91Gz3GmxP7rNA="
+    crossorigin=""></script>
+  <script>
+    const locationCoords = {
+      nyc: [40.7128, -74.006],
+      tokyo: [35.6762, 139.6503],
+      chernobyl: [51.2768, 30.2219]
+    };
+
+    const map = L.map('map').setView(locationCoords.nyc, 5);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    let marker = L.marker(locationCoords.nyc).addTo(map);
+
+    document.getElementById("location").addEventListener("change", function() {
+      const loc = this.value;
+      const coords = locationCoords[loc];
+      map.setView(coords, 5);
+      marker.setLatLng(coords);
+      updateRadiationData(loc);
+    });
+
+    function updateRadiationData(loc) {
+      const current = (Math.random() * 2 + 0.2).toFixed(2);
+      document.getElementById("current").textContent = `${current} μSv/h`;
+
+      const history = document.getElementById("history");
+      history.innerHTML = "";
+
+      for (let i = 0; i < 5; i++) {
+        const level = (Math.random() * 2 + 0.2).toFixed(2);
+        const li = document.createElement("li");
+        li.textContent = `Day ${5 - i}: ${level} μSv/h`;
+        history.appendChild(li);
+      }
+    }
+
+    updateRadiationData("nyc");
+  </script>
+</body>
+</html>
