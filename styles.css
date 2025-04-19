@@ -1,33 +1,37 @@
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background: #f7faff;
-  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f4f4;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 .container {
+  background: #fff;
+  margin: 20px auto;
   padding: 20px;
-  max-width: 600px;
-  margin: auto;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
 }
 
-.data-box {
-  margin-top: 20px;
-  padding: 15px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+h1 {
+  color: #333;
 }
 
 select {
   padding: 8px;
-  font-size: 16px;
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+.data-box {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.map-box {
+  height: 400px;
+  margin: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
 }
