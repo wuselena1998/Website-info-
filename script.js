@@ -1,5 +1,3 @@
-// script.js
-
 // Initialize the map when the page loads
 const map = L.map('map').setView([40.7128, -74.0060], 10); // Default: New York City coordinates
 
