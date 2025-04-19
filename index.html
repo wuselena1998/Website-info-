@@ -1,44 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Radiation Tracker</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-sA+e2I7n7MDrSfmvx6jhM/8g0uFvIoei3DILp/YZzCk="
-      crossorigin=""
-    />
-  </head>
-  <body>
-    <div class="container">
-      <h1>☢️ Radiation Tracker</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Radiation Tracker</title>
 
-      <label for="location">Select Location:</label>
-      <select id="location">
-        <option value="nyc">New York City</option>
-        <option value="tokyo">Tokyo</option>
-        <option value="chernobyl">Chernobyl</option>
-      </select>
+  <!-- Add inside <head> -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>☢️ Radiation Tracker</h1>
 
-      <div id="dataDisplay" class="data-box">
-        <h2>Current Radiation Level:</h2>
-        <p id="current">-- μSv/h</p>
+    <label for="location">Select Location:</label>
+    <select id="location">
+      <option value="nyc">New York City</option>
+      <option value="tokyo">Tokyo</option>
+      <option value="chernobyl">Chernobyl</option>
+    </select>
 
-        <h3>Historical Data (past 5 days):</h3>
-        <ul id="history"></ul>
-      </div>
+    <div id="dataDisplay" class="data-box">
+      <h2>Current Radiation Level:</h2>
+      <p id="current">-- μSv/h</p>
+
+      <h3>Historical Data (past 5 days):</h3>
+      <ul id="history"></ul>
     </div>
 
+    <!-- Add this after your dataDisplay div -->
     <div id="map" class="map-box"></div>
+  </div>
 
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-pMprtkFS86AU5TzNKj1qS+c8lfIrYk91Gz3GmxP7rNA="
-      crossorigin=""
-    ></script>
-    <script src="script.js"></script>
-  </body>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
