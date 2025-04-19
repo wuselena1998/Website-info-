@@ -1,37 +1,33 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f4f4f4;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  text-align: center;
+  background: #f5f5f5;
 }
 
 .container {
-  background: #fff;
+  max-width: 600px;
   margin: 20px auto;
+  background: white;
   padding: 20px;
-  max-width: 500px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  color: #333;
-}
-
+label,
 select {
-  padding: 8px;
-  margin: 10px 0;
+  display: block;
+  margin-bottom: 10px;
 }
 
 .data-box {
-  text-align: left;
   margin-top: 20px;
 }
 
-.map-box {
+#map {
   height: 400px;
-  margin: 20px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
+  width: 90%;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
