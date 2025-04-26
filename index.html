@@ -2,61 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Radiation Awareness</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Nuclear Radiation Information</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f7fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    h1 {
+      margin-top: 40px;
+      font-size: 3em;
+      color: #333;
+    }
+    nav {
+      margin: 30px 0;
+    }
+    nav a {
+      text-decoration: none;
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      margin: 0 10px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+      font-size: 18px;
+    }
+    nav a:hover {
+      background-color: #45a049;
+    }
+    .content {
+      width: 90%;
+      max-width: 800px;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar">
-  <a href="index.html">Home</a>
-  <a href="locations.html">Radiation in Cities</a>
-</nav>
+  <h1>Nuclear Radiation Info</h1>
 
-<!-- Main Content -->
-<header>
-  <h1>Radiation Awareness</h1>
-</header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="locations.html">Radiation in Cities</a>
+  </nav>
 
-<main>
-  <section>
-    <h2>What is Radiation?</h2>
-    <p>Radiation is energy that travels through space. Some types of radiation can be seen, like visible light, while others are invisible, like X-rays and gamma rays.</p>
-  </section>
+  <div class="content">
+    <h2>What is Nuclear Radiation?</h2>
+    <p>Nuclear radiation refers to the particles and energy released during radioactive decay. It includes alpha particles, beta particles, gamma rays, and more. While natural radiation exists in our environment, excessive exposure can pose health risks.</p>
 
-  <section>
-    <h2>Types of Radiation</h2>
+    <h2>Common Sources of Radiation</h2>
     <ul>
-      <li><strong>Alpha Particles:</strong> Heavy, positively charged particles that can be stopped by paper or skin.</li>
-      <li><strong>Beta Particles:</strong> Lighter, negatively charged particles that can penetrate further but are blocked by materials like plastic or glass.</li>
-      <li><strong>Gamma Rays:</strong> Highly penetrating electromagnetic radiation requiring dense materials like lead for shielding.</li>
+      <li>Medical Imaging (X-rays, CT scans)</li>
+      <li>Nuclear Power Plants</li>
+      <li>Cosmic Rays from Space</li>
+      <li>Natural Radioactive Materials (like Radon gas)</li>
     </ul>
-  </section>
 
-  <section>
-    <h2>Sources of Radiation</h2>
-    <p>Natural sources include the sun, soil, rocks, and even food. Man-made sources include medical imaging (like X-rays), nuclear reactors, and industrial equipment.</p>
-  </section>
-
-  <section>
     <h2>Radiation Safety</h2>
-    <p>Radiation exposure can be minimized by using three main principles: time, distance, and shielding.</p>
-    <ul>
-      <li>Limit the time spent near a radiation source.</li>
-      <li>Increase distance from the radiation source.</li>
-      <li>Use appropriate shielding to block or reduce radiation exposure.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Why Learn About Radiation?</h2>
-    <p>Understanding radiation helps promote safety and smart decision-making, especially for people working in healthcare, nuclear energy, and research industries.</p>
-  </section>
-</main>
-
-<footer>
-  <p>© 2025 Radiation Awareness Project</p>
-</footer>
+    <p>To stay safe around radiation, it's important to limit exposure time, increase distance from the source, and use appropriate shielding.</p>
+  </div>
 
 </body>
 </html>
