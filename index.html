@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Radiation Tracker</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Radiation Awareness</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>☢️ Radiation Tracker</h1>
 
-    <label for="location">Select Location:</label>
-    <select id="location">
-      <option value="nyc">New York City</option>
-      <option value="tokyo">Tokyo</option>
-      <option value="chernobyl">Chernobyl</option>
-    </select>
-
-    <div id="dataDisplay" class="data-box">
-      <h2>Current Radiation Level:</h2>
-      <p id="current">-- μSv/h</p>
-
-      <h3>Historical Data (past 5 days):</h3>
-      <ul id="history"></ul>
-    </div>
-
-    <div id="map" class="map-box"></div> <!-- Map Box -->
-  </div>
-
-  <!-- Updated Script for Leaflet JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-  <script src="script.js"></script>
-</body>
+<!-- Navigation -->
 <nav>
   <a href="index.html">Home</a> |
   <a href="locations.html">Radiation in Cities</a>
 </nav>
+
+<!-- Main content -->
+<header>
+  <h1>Welcome to the Radiation Awareness Website</h1>
+</header>
+
+<main>
+  <section>
+    <h2>What is Radiation?</h2>
+    <p>Radiation is energy that comes from a source and travels through space. It can be natural (like sunlight) or artificial (like X-rays and nuclear power).</p>
+  </section>
+
+  <section>
+    <h2>Types of Radiation</h2>
+    <ul>
+      <li>Alpha particles</li>
+      <li>Beta particles</li>
+      <li>Gamma rays</li>
+      <li>Neutrons</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Safety and Protection</h2>
+    <p>There are many ways to protect yourself from harmful radiation, including shielding, distance, and limiting exposure time.</p>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Radiation Awareness Project</p>
+</footer>
+
+</body>
 </html>
